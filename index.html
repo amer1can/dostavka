@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Dostavka">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="./css/hystmodal.min.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Dostavka</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header-wrap">
+        <div class="container">
+          <header class="header">
+            <div class="header__logo"><a href="">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="img/header/logo-m.png"><img src="img/header/logo.png" alt="logo">
+                </picture></a></div>
+            <div class="header__info"><a class="header__phone" href="tel:88003334270">8 800 333-42-70</a><a class="header__location" href="#">Константинопольск</a></div>
+            <nav class="header__menu">
+              <ul class="header__menu-list">
+                <li><a class="header__menu-link header__menu-link--active" href="#">Товары</a></li>
+                <li><a class="header__menu-link" href="#">Комнаты</a></li>
+                <li><a class="header__menu-link" href="#">Акции</a></li>
+                <li><a class="header__menu-link" href="#">Для бизнеса</a></li>
+                <li><a class="header__menu-link" href="#">Тарифы</a></li>
+                <li><a class="header__menu-link" href="#">Партнёрство</a></li>
+              </ul>
+            </nav>
+            <div class="header__search">
+              <input class="header__input-search" type="text" name="search" placeholder="Поиск товара, введите название тоaвара, атикул или ссылку">
+            </div>
+            <div class="header__user-wrap">
+              <div class="header__user"><a class="header__user-icon" href="#">
+                  <source media="(max-width: 767px)" srcset="img/header/user-m.svg"><img src="img/header/user.svg" alt="user"></a>
+                <div class="header__user-link"> <a href="#">Войти</a></div>
+              </div>
+              <div class="header__cart"> <a class="header__cart-icon" href="#" data-hystmodal="#cart">
+                  <source media="(max-width: 767px)" srcset="img/header/cart-m.svg"><img src="img/header/cart.svg" alt="cart"><a class="header__user-mark" href="#" data-hystmodal="#cart">798</a></a>
+                <div class="header__cart-link"> <a href="#" data-hystmodal="#cart">Корзина</a></div>
+              </div>
+              <div class="header__menu-icon"><span></span><span> </span><span></span></div>
+            </div>
+            <div class="header__delivery"> <span class="header__delivery-header">До ближайшей отправки:</span><span class="header__delivery-time"> 22 дня 15 ч. 33 мин.</span></div>
+          </header>
+        </div>
+        <div class="hystmodal" id="cart" aria-hidden="true">
+          <div class="hystmodal__wrap"> 
+            <div class="hystmodal__window cart-window" role="dialog" aria-modal="true">
+              <div class="modal-cart" role="dialog" aria-modal="true">
+                <button class="modal-close modal-close-cart" data-hystclose></button>
+                <div class="modal-cart-header"> 
+                  <div class="modal-cart-header__btn"> <img src="img/header/cart-el1.png" alt="cart1"><span class="modal-cart-header__cart"><span>Ваша</span> корзина</span></div>
+                  <div class="modal-cart-header__btn"> <img src="img/header/cart-el2.png" alt="cart2"><span class="modal-cart-header__calc tab-select">Калькулятор доставки</span></div>
+                </div>
+                <div class="modal-cart__main-cart">
+                  <div class="modal-cart__lines">
+                    <div class="modal-cart__line"> 
+                      <div class="modal-cart__line-text"><span>0</span> тваров на сумму:</div>
+                      <div class="modal-cart__line-num"><span>0</span> ₽</div>
+                    </div>
+                    <div class="modal-cart__line"> 
+                      <div class="modal-cart__line-text">Вы экономите:</div>
+                      <div class="modal-cart__line-num modal-cart__line-num--green"><span>0</span> ₽</div>
+                    </div>
+                    <div class="modal-cart__line"> 
+                      <div class="modal-cart__line-text">Услуги Dostavka.tk:</div>
+                      <div class="modal-cart__line-num"><span>0</span> ₽</div>
+                    </div>
+                    <div class="modal-cart__line"> 
+                      <div class="modal-cart__line-text">Доставка:</div>
+                      <div class="modal-cart__line-num"><span>0</span> ₽</div>
+                    </div>
+                  </div>
+                  <form class="modal-cart-form">
+                    <div class="modal-cart-form-label">Добавьте товар по артикулу </div>
+                    <div class="modal-cart-form-field">
+                      <input class="modal-cart-form-input" type="text" name="articul" placeholder="Например: 904.278.09">
+                      <input class="modal-cart-form-btn btn" type="button" value="Добавить">
+                    </div>
+                    <div class="modal-cart-form-label">Промокод</div>
+                    <div class="modal-cart-form-label-ico"> <img src="img/header/promo-ico.svg" alt=""></div>
+                    <div class="modal-cart-form-field">
+                      <input class="modal-cart-form-input" type="text" name="code" placeholder="zakaz1000">
+                      <input class="modal-cart-form-btn btn" type="button" value="Применить">
+                    </div>
+                  </form>
+                  <div class="modal-cart-products"> <span class="modal-cart-products-empty">Корзина пуста,<br> Товары ждут вас</span></div>
+                </div>
+                <div class="modal-cart__main-calc">
+                  <div class="modal-cart__main-calc-body">
+                    <div class="modal-cart__city">Ваш город<span>Новосибирск</span></div>
+                    <div class="modal-cart__type">Тип доставки
+                      <div class="modal-cart__type-group">
+                        <input type="radio" name="t1" id="t1" checked>
+                        <label for="t1">До пункта выдачи</label>
+                      </div>
+                      <div class="modal-cart__type-group">
+                        <input type="radio" name="t1" id="t2">
+                        <label for="t2">Адресная доствка</label>
+                      </div>
+                    </div>
+                    <div class="modal-cart__sum-wrap"> 
+                      <div class="modal-cart__sum">Сумма заказа</div>
+                      <input class="modal-cart__sum-input" type="text" name="summ" value="3850"><span>₽</span>
+                    </div>
+                    <div class="modal-cart__cost-value">
+                      <div class="modal-cart__cost-value-label">  <span>500 ₽</span><span>> 100 000 ₽</span></div>
+                      <div class="modal-cart__cost-value-liner">
+                        <div class="modal-cart__cost-value-line"> </div>
+                        <div class="modal-cart__cost-value-brick"></div>
+                      </div>
+                    </div>
+                    <div class="modal-cart__lab-section">
+                      <div class="modal-cart__lab">Стоимость доставки: <span class="modal-cart__lab--price">654.5 ₽ </span></div>
+                      <div class="modal-cart__lab">Тариф: <span class="modal-cart__lab--black">«Начальный», 17% от заказа</span></div>
+                    </div>
+                    <div class="modal-cart__lab-section">
+                      <div class="modal-cart__lab">До тарифа «Стандарт», 15%: <span class="modal-cart__lab--black">1250 ₽</span></div>
+                      <div class="modal-cart__lab">Ближайшая дата доставки: <span class="modal-cart__lab--black">22/04</span></div>
+                    </div>
+                    <div class="modal-cart__back">Назад в корзину</div>
+                  </div>
+                </div>
+                <div class="modal-cart-buttons"> 
+                  <input class="btn modal-cart-button" type="button" value="Продолжить покупки">
+                  <input class="btn modal-cart-button" type="button" value="Перейти к оформлению">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="block01">
+          <div class="block01__slider-wrap swiper-container">
+            <div class="block01__slider swiper-wrapper">
+              <div class="block01__slide swiper-slide">
+                <div class="block01__slide-img"><img src="img/block01/slide1.png" alt="slide1">
+                  <div class="block01__slide-text"><span class="block01__slide-p">Заказывай <br> больше</span><span class="block01__slide-p block01__slide-p--black">плати <br> меньше</span></div>
+                  <div class="block01__slide-btn btn">К товарам</div>
+                </div>
+              </div>
+              <div class="block01__slide swiper-slide">
+                <div class="block01__slide-img"><img src="img/block01/slide2.png" alt="slide2">
+                  <div class="block01__slide-text"><span class="block01__slide-p">Спеши, <br> друг</span><span class="block01__slide-p block01__slide-p--black">успей <br> забрать</span></div>
+                  <div class="block01__slide-btn btn">К акциям</div>
+                </div>
+              </div>
+              <div class="block01__slide swiper-slide">
+                <div class="block01__slide-img"><img src="img/block01/slide3.png" alt="slide3">
+                  <div class="block01__slide-text"><span class="block01__slide-p">Заказывай <br> больше</span><span class="block01__slide-p block01__slide-p--black">плати <br> меньше</span></div>
+                  <div class="block01__slide-btn btn">Узнать</div>
+                </div>
+              </div>
+              <div class="block01__slide swiper-slide">
+                <div class="block01__slide-img"><img src="img/block01/slide4.png" alt="slide4">
+                  <div class="block01__slide-text"><span class="block01__slide-p">Все твоё <br> теперь</span><span class="block01__slide-p block01__slide-p--black">ещё <br> дешевле</span></div>
+                  <div class="block01__slide-btn btn">Покупки</div>
+                </div>
+              </div>
+            </div>
+            <div class="block01__slider-control">
+              <div class="block01__slider-prev slider-left-btn"></div>
+              <div class="swiper-pagination"></div>
+              <div class="block01__slider-next slider-right-btn"></div>
+            </div>
+          </div>
+          <div class="block01__registration">
+            <div class="block01__registration-title">ПОЛУЧИ ДОСТУП<br> К ЗАКРЫТОЙ РАСПРОДАЖЕ</div>
+            <div class="block01__registration-subtitle">При регистрации на нашем сайте
+              <form class="block01__form" action="#" method="post">
+                <input class="block01__form-email" type="email" name="email" placeholder="Ваш e-mail">
+                <input class="block01__form-btn btn" type="submit" value="Быстрая регистрация">
+                <div class="block01__form-info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block02-wrap">
+        <div class="block02">
+          <div class="block02__buttons">
+            <input class="block02__btn block02__btn--active" type="button" value="Товары">
+            <input class="block02__btn" type="button" value="Комнаты">
+          </div>
+          <div class="block02__add">
+            <input class="block02__add-input" type="text" name="add" placeholder="Добавьте товар по артикулу или ссылке"><a class="block02__add-btn btn" href="#">Добавить</a>
+          </div>
+          <div class="block02__tab-wrapper">
+            <div class="block02__items block02__items--active">
+              <div class="block02__item">
+                <ul class="block02__list">
+                  <li><a href="#">Мебель</a></li>
+                  <li><a href="#">Хранение и порядок</a></li>
+                  <li><a href="#">Текстиль</a></li>
+                  <li><a href="#">Декор для дома  </a></li>
+                  <li><a href="#">Кухня и бытовая химия</a></li>
+                </ul>
+              </div>
+              <div class="block02__item">
+                <ul class="block02__list">
+                  <li><a href="#">Посуда и кух. принадлежности</a></li>
+                  <li><a href="#">Кровати и матрасы</a></li>
+                  <li><a href="#">Товары для детей</a></li>
+                  <li><a href="#">Ванная</a></li>
+                  <li><a href="#">Стирка и уборка</a></li>
+                </ul>
+              </div>
+              <div class="block02__item">
+                <ul class="block02__list">
+                  <li><a href="#">Освещение</a></li>
+                  <li><a href="#">Ковры и напольные покрытия</a></li>
+                  <li><a href="#">Товары для ремонта</a></li>
+                  <li><a href="#">Товары для отдыха и путешествий </a></li>
+                  <li><a href="#">Электроника</a></li>
+                </ul>
+              </div>
+              <div class="block02__item">
+                <ul class="block02__list">
+                  <li><a href="#">Балкон и сад</a></li>
+                  <li><a href="#">Товары для безопаснеости</a></li>
+                  <li><a href="#">Товары для животных</a></li>
+                  <li><a href="#">Товары до 299р.</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="block02__items">
+              <div class="block02__item-secret"><img src="img/block02/glaz.svg" alt="">
+                <div class="block02__item-secret-text"> <span class="block02__item-secret-span1">  Секретный каталог</span><span class="block02__item-secret-span2">Вам доступен после <a href="#" class="block02__item-secret-span3">регистрации или входа </a></span></div>
+              </div>
+              <div class="block02__item">
+                <ul class="block02__list">
+                  <li><img src="img/block02/01.svg" alt=""><a href="#">Гостинная</a></li>
+                  <li><img src="img/block02/02.svg" alt=""><a href="#">Спальня</a></li>
+                  <li><img src="img/block02/03.svg" alt=""><a href="#">Кухня</a></li>
+                </ul>
+              </div>
+              <div class="block02__item">
+                <ul class="block02__list">
+                  <li><img src="img/block02/04.svg" alt=""><a href="#">Ванная</a></li>
+                  <li><img src="img/block02/05.svg" alt=""><a href="#">Рабочий кабинет</a></li>
+                </ul>
+              </div>
+              <div class="block02__item">
+                <ul class="block02__list">
+                  <li><img src="img/block02/06.svg" alt=""><a href="#">Детская</a></li>
+                  <li><img src="img/block02/07.svg" alt=""><a href="#">Уже не детская</a></li>
+                  <li><img src="img/block02/08.svg" alt=""><a href="#">Столовая</a></li>
+                </ul>
+              </div>
+              <div class="block02__item">
+                <ul class="block02__list">
+                  <li><img src="img/block02/09.svg" alt=""><a href="#">Прихожая</a></li>
+                  <li><img src="img/block02/10.svg" alt=""><a href="#">Балкон и сад</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="block03">
+          <div class="block03__title title">Часто покупают</div>
+          <div class="block03__text">Здравствуйте! Было оочень приятно заказывать у Вас! Очень понравилось, как с нами общались. Очень внимательно подошли к нашему заказу и помогли даже исправить ошибку в нём. Обязательно будем...</div>
+          <div class="block03__wrap">
+            <div class="block03__container swiper-container">
+              <div class="block03__items swiper-wrapper">
+                <div class="block03__item swiper-slide">
+                  <div class="block03__item-img"><img src="img/block03/01.png" alt="01"></div>
+                  <div class="block03__item-name">Буссэн</div>
+                  <div class="block03__item-desc">пуф-мешок для дома / сада</div>
+                  <div class="block03__item-price">7500 ₽</div>
+                  <div class="block03__item-quantity show">
+                    <div class="block03__item-dec">-</div>
+                    <div class="block03__item-num"><span>3</span> шт </div>
+                    <div class="block03__item-inc">+</div>
+                  </div>
+                  <div class="block03__item-add-btn btn btn-b">Добавить</div>
+                </div>
+                <div class="block03__item swiper-slide">
+                  <div class="block03__item-img"><img src="img/block03/02.png" alt="02"></div>
+                  <div class="block03__item-name">ВЕДБУ</div>
+                  <div class="block03__item-desc">пуф-мешок для дома / сада</div>
+                  <div class="block03__item-price">7500 ₽</div>
+                  <div class="block03__item-quantity">
+                    <div class="block03__item-dec">-</div>
+                    <div class="block03__item-num"><span>1</span> шт </div>
+                    <div class="block03__item-inc">+</div>
+                  </div>
+                  <div class="block03__item-add-btn btn btn-w">Добавить</div>
+                </div>
+                <div class="block03__item swiper-slide">
+                  <div class="block03__item-img"><img src="img/block03/03.png" alt="03"></div>
+                  <div class="block03__item-name">Буссэн</div>
+                  <div class="block03__item-desc">пуф-мешок для дома / сада</div>
+                  <div class="block03__item-price">7500 ₽</div>
+                  <div class="block03__item-quantity">
+                    <div class="block03__item-dec">-</div>
+                    <div class="block03__item-num"><span>1</span> шт </div>
+                    <div class="block03__item-inc">+</div>
+                  </div>
+                  <div class="block03__item-add-btn btn btn-w">Добавить</div>
+                </div>
+                <div class="block03__item swiper-slide">
+                  <div class="block03__item-img"><img src="img/block03/04.png" alt="04"></div>
+                  <div class="block03__item-name">кронт</div>
+                  <div class="block03__item-desc">пуф-мешок для дома / сада</div>
+                  <div class="block03__item-price">65 ₽</div>
+                  <div class="block03__item-quantity">
+                    <div class="block03__item-dec">-</div>
+                    <div class="block03__item-num"><span>1</span> шт </div>
+                    <div class="block03__item-inc">+</div>
+                  </div>
+                  <div class="block03__item-add-btn btn btn-w">Добавить</div>
+                </div>
+                <div class="block03__item swiper-slide">
+                  <div class="block03__item-img"><img src="img/block03/05.png" alt="05"></div>
+                  <div class="block03__item-name">Буссэн</div>
+                  <div class="block03__item-desc">Коробка с крышкой, 25x34x26 см</div>
+                  <div class="block03__item-price">49 ₽</div>
+                  <div class="block03__item-quantity">
+                    <div class="block03__item-dec">-</div>
+                    <div class="block03__item-num"><span>1</span> шт </div>
+                    <div class="block03__item-inc">+</div>
+                  </div>
+                  <div class="block03__item-add-btn btn btn-w">Добавить</div>
+                </div>
+                <div class="block03__item swiper-slide">
+                  <div class="block03__item-img"><img src="img/block03/06.png" alt="06"></div>
+                  <div class="block03__item-name">продакт</div>
+                  <div class="block03__item-desc">Вспениватель молока / черный</div>
+                  <div class="block03__item-price">99 ₽</div>
+                  <div class="block03__item-quantity">
+                    <div class="block03__item-dec">-</div>
+                    <div class="block03__item-num"><span>1</span> шт </div>
+                    <div class="block03__item-inc">+</div>
+                  </div>
+                  <div class="block03__item-add-btn btn btn-w">Добавить</div>
+                </div>
+                <div class="block03__item swiper-slide">
+                  <div class="block03__item-img"><img src="img/block03/03.png" alt="03"></div>
+                  <div class="block03__item-name">Буссэн</div>
+                  <div class="block03__item-desc">пуф-мешок для дома / сада</div>
+                  <div class="block03__item-price">7500 ₽</div>
+                  <div class="block03__item-quantity">
+                    <div class="block03__item-dec">-</div>
+                    <div class="block03__item-num"><span>1</span> шт </div>
+                    <div class="block03__item-inc">+</div>
+                  </div>
+                  <div class="block03__item-add-btn btn btn-w">Добавить</div>
+                </div>
+              </div>
+            </div>
+            <div class="block03__slider-control">
+              <div class="block03__slider-prev slider-left-btn"></div>
+              <div class="block03__slider-next slider-right-btn"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block04-wrap container">
+        <div class="block04">
+          <div class="block04__body-wrap">
+            <div class="block04__body">
+              <div class="block04__title title">Наши преимущества</div>
+              <div class="block04__items">
+                <div class="block04__item">
+                  <div class="block04__item-img"><img src="img/block04/01.png" alt=""></div>
+                  <div class="block04__item-text">10 ЛЕТ<br> УСПЕШНОЙ <br>РАБОТЫ</div>
+                </div>
+                <div class="block04__item">
+                  <div class="block04__item-img"><img src="img/block04/02.png" alt=""></div>
+                  <div class="block04__item-text">оплата<br> в рассрочку</div>
+                </div>
+                <div class="block04__item">
+                  <div class="block04__item-img"><img src="img/block04/03.png" alt=""></div>
+                  <div class="block04__item-text">ОТПРАВКА В <br>ДЕНЬ ЗАКАЗА</div>
+                </div>
+                <div class="block04__item">
+                  <div class="block04__item-img"><img src="img/block04/04.png" alt=""></div>
+                  <div class="block04__item-text">бесплатный<br> возврат и обмен</div>
+                </div>
+                <div class="block04__item">
+                  <div class="block04__item-img"><img src="img/block04/05.png" alt=""></div>
+                  <div class="block04__item-text">ПУНКТЫ ВЫДАЧИ<br> ПО ВСЕЙ РОССИИ</div>
+                </div>
+                <div class="block04__item">
+                  <div class="block04__item-img"><img src="img/block04/06.png" alt=""></div>
+                  <div class="block04__item-text">гарантия<br> сохранности<br> товара</div>
+                </div>
+              </div><a class="block04__details" href="#">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block05">
+        <div class="container">
+          <div class="block05__title title">Отзывы</div>
+          <div class="block05__slider swiper-container">
+            <div class="block05__items swiper-wrapper">
+              <div class="block05__item swiper-slide">
+                <div class="block05__item-img"><img src="img/block05/01.png" alt=""></div>
+                <div class="block05__item-title">Дарья Жихарева</div>
+                <div class="block05__item-text">Здравствуйте! Было оочень приятно заказывать у Вас! Очень понравилось, как с нами общались. Очень внимательно подошли к нашему заказу и помогли даже исправить</div>
+                <input class="block05__item-more" type="button" value="Развернуть">
+              </div>
+              <div class="block05__item swiper-slide">
+                <div class="block05__item-img"><img src="img/block05/02.png" alt=""></div>
+                <div class="block05__item-title">Дарья Жихарева</div>
+                <div class="block05__item-text">Здравствуйте! Было оочень приятно заказывать у Вас! Очень понравилось, как с нами общались. Очень внимательно подошли к нашему заказу и помогли даже исправить ошибку в нём. Обязательно будем...</div>
+                <input class="block05__item-more block05__item-more--show" type="button" value="Развернуть">
+              </div>
+              <div class="block05__item swiper-slide">
+                <div class="block05__item-img"><img src="img/block05/03.png" alt=""></div>
+                <div class="block05__item-title">Дарья Жихарева</div>
+                <div class="block05__item-text">Здравствуйте! Было оочень приятно заказывать у Вас! Очень понравилось, как с нами общались.</div>
+                <input class="block05__item-more" type="button" value="Развернуть">
+              </div>
+              <div class="block05__item swiper-slide">
+                <div class="block05__item-img"><img src="img/block05/04.png" alt=""></div>
+                <div class="block05__item-title">Дарья Жихарева</div>
+                <div class="block05__item-text">Здравствуйте! Было оочень приятно заказывать у Вас!</div>
+                <input class="block05__item-more" type="button" value="Развернуть">
+              </div>
+              <div class="block05__item swiper-slide">
+                <div class="block05__item-img"><img src="img/block05/01.png" alt=""></div>
+                <div class="block05__item-title">Дарья Жихарева</div>
+                <div class="block05__item-text">Здравствуйте! Было оочень приятно заказывать у Вас! Очень понравилось, как с нами общались. Очень внимательно подошли к нашему заказу и помогли даже исправить</div>
+                <input class="block05__item-more" type="button" value="Развернуть">
+              </div>
+            </div>
+            <div class="block05__slider-control">
+              <div class="block05__slider-prev slider-left-btn"></div>
+              <div class="block05__slider-next slider-right-btn"></div>
+            </div>
+          </div>
+          <div class="block05__control">
+            <input class="block05__control-add" type="button" value="Добавить отзыв">
+            <input class="block05__control-all" type="button" value="Все отзывы">
+            <div class="block05__control-vk">Отзывы взяты с группы ВК</div>
+          </div>
+        </div>
+      </div>
+      <div class="block06"> 
+        <div class="container">
+          <div class="block06__title title">Доставка в ваш город</div>
+          <div class="block06__search">
+            <input class="block06__search-input" type="text" name="search-city" placeholder="Ваш город">
+          </div>
+          <div class="block06__body-wrap">
+            <div class="block06__body">
+              <div class="block06__points">
+                <div class="block06__points-buttons">
+                  <input class="block06__points-but block06__points-but--active" type="button" value="Пункты выдачи">
+                  <input class="block06__points-but" type="button" value="Магазины">
+                </div>
+                <div class="block06__points-item">
+                  <div class="block06__points-item-title">пвз “подаркино”</div>
+                  <div class="block06__points-item-adress"><span class="block06__points-item-adress-icon"><img src="img/block06/location-pointer.svg" alt=""></span><span class="block06__points-item-adress-name">ул. Коммунаров, 31,<br> микрорайон Центральный, Краснодар</span></div>
+                  <div class="block06__points-item-phone">
+                    <div class="block06__points-item-phone-icon"> <img src="img/block06/local-call.svg" alt=""></div>
+                    <div class="block06__points-item-phone-num">             <span>8 (800) 250-14-05</span><span>+7 (861) 991-02-91</span></div>
+                  </div>
+                </div>
+                <div class="block06__points-item">
+                  <div class="block06__points-item-title">пвз “Доставка-онлайН”</div>
+                  <div class="block06__points-item-adress"><span class="block06__points-item-adress-icon"><img src="img/block06/location-pointer.svg" alt=""></span><span class="block06__points-item-adress-name">ул. Ленина, 151, Краснодар</span></div>
+                  <div class="block06__points-item-phone">
+                    <div class="block06__points-item-phone-icon"> <img src="img/block06/local-call.svg" alt=""></div>
+                    <div class="block06__points-item-phone-num">             <span>+7 (918) 41-41-45</span><span>+7 (861) 991-02-91</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block06__map"><img src="img/block06/map.png" alt=""></div>
+              <div class="block06__info">
+                <div class="block06__info-items"> 
+                  <div class="block06__info-item"> 
+                    <div class="block06__info-item-img"><img src="img/block06/info1.svg" alt=""></div>
+                    <div class="block06__info-item-title">Город:</div>
+                    <div class="block06__info-item-text block06__info-item-text--spec">Нижневартовский</div>
+                  </div>
+                  <div class="block06__info-item"> 
+                    <div class="block06__info-item-img"><img src="img/block06/info2.svg" alt=""></div>
+                    <div class="block06__info-item-title">До IKEA:</div>
+                    <div class="block06__info-item-text">570 КМ</div>
+                  </div>
+                  <div class="block06__info-item"> 
+                    <div class="block06__info-item-img"><img src="img/block06/info3.svg" alt=""></div>
+                    <div class="block06__info-item-title">Тариф:</div>
+                    <div class="block06__info-item-text block06__info-item-text--spec">«СТАНДАРТ»</div>
+                  </div>
+                  <div class="block06__info-item"> 
+                    <div class="block06__info-item-img"><img src="img/block06/info4.svg" alt=""></div>
+                    <div class="block06__info-item-title">Доставка</div>
+                    <div class="block06__info-item-text">3769.23 р.</div>
+                  </div>
+                  <div class="block06__info-item"> 
+                    <div class="block06__info-item-img"><img src="img/block06/info5.svg" alt=""></div>
+                    <div class="block06__info-item-title">Дата Отправки:</div>
+                    <div class="block06__info-item-text">23/03</div>
+                  </div>
+                  <div class="block06__info-item"> 
+                    <div class="block06__info-item-img"><img src="img/block06/info6.svg" alt=""></div>
+                    <div class="block06__info-item-title">Срок Доставки:</div>
+                    <div class="block06__info-item-text">3 ДНЯ</div>
+                  </div>
+                </div>
+                <div class="block06__btn btn">Оформить заказ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block07">
+        <div class="container">
+          <div class="block07__title title">что мы предлагаем?</div>
+          <div class="block07__items">
+            <div class="block07__item">
+              <div class="block07__item-img"><img src="img/block07/01.png" alt=""></div>
+              <div class="block07__item-title">1. выгодная Доставка<br> товаров из ИКЕА</div>
+              <div class="block07__item-text">Доставку мы осуществляем в любой регион России. Чтобы узнать стоимость и сроки выполнения услуги, нужно ввести в специальной форме на сайте свой почтовый индекс. Ожидая доставку из ИКЕИ, нужно учитывать, что поставляется она в разобранном виде. Предполагается, что по инструкции каждый покупатель может сам справиться со сборкой. Но если желания или возможности ею заниматься нет, то заказывайте сборочные работы на нашем сайте. Для этого нужно заполнить заявку, указать свои данные и удобное время прихода специалиста. Срок доставки в ИКЕА зависит от вашего местонахождения. Если рядом с вами есть фирменный магазин, возможен самовывоз заказанных онлайн товаров.</div>
+            </div>
+            <div class="block07__item">
+              <div class="block07__item-img"><img src="img/block07/02.png" alt=""></div>
+              <div class="block07__item-title">2. Качество мирового бренда, удобный и красивый интерьер</div>
+              <div class="block07__item-text">Все товары IKEA (от светильников до диванов) продуманы до мелочей, и без проблем сочетаются друг с другом, что облегчает Вам планирование обстановки. Вы можете выбирать любые товары в нашем каталоге, не беспокоясь об их совместимости.<br> А также сочетая уже имеющуюся у Вас мебель с товарами этого бренда, вы получите современный интерьер европейского уровня. Все оценят насколько он станет практичный, удобный и красивый.</div>
+            </div>
+            <div class="block07__item">
+              <div class="block07__item-img"><img src="img/block07/03.png" alt=""></div>
+              <div class="block07__item-title">3. Экономия денег и<br> качественный сервис  </div>
+              <div class="block07__item-text">Все детали мы возьмем на себя: поможем с выбором, организуем приоритетную доставку, а так же сборку при необходимости. А вы сможете уделить больше времени своим клиентам. Для Вас доступны спецтарифы, по которым сможете неплохо сэкономить! А также предоставляем гибкие условия для разных форм отчетности: мы работаем с фрилансерами, ИП и компаниями, с НДС и без.<br> Предоставляем бухгалтерские документы.</div>
+            </div>
+          </div>
+          <div class="block07__btn-wrap">
+            <div class="block07__btn btn">Перейти в каталог</div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer container"> 
+        <div class="footer__body">
+          <div class="footer__social"><a class="footer__logo" href="#">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/footer/logo-mob.png"><img src="img/footer/logo-white.png" alt="">
+              </picture></a><a class="footer__phone" href="tel:88003330154">8 800 333-01-54</a>
+            <div class="footer__soc-links"><a class="footer__soc-link" href="#"><img src="img/footer/vk-social-logotype.svg" alt=""></a><a class="footer__soc-link" href="#"><img src="img/footer/instagram.svg" alt=""></a><a class="footer__soc-link" href="#"><img src="img/footer/odnoklassniki-logo.svg" alt=""></a><a class="footer__soc-link" href="#"><img src="img/footer/youtube.svg" alt=""></a></div>
+            <div class="footer__copy">© Все права защищены. 2019</div>
+          </div>
+          <div class="footer__rooms">
+            <div class="footer__rooms-title footer-title">Комнаты</div>
+            <ul class="footer__rooms-list footer__list">
+              <li><a class="footer__list-item" href="#">Гостиная</a></li>
+              <li><a class="footer__list-item" href="#">Детская</a></li>
+              <li><a class="footer__list-item" href="#">Спальня</a></li>
+              <li><a class="footer__list-item" href="#">Столовая</a></li>
+              <li><a class="footer__list-item" href="#">Кухня</a></li>
+              <li><a class="footer__list-item" href="#">Офис</a></li>
+              <li><a class="footer__list-item" href="#">Ванная</a></li>
+              <li><a class="footer__list-item" href="#">Прихожая</a></li>
+              <li><a class="footer__list-item" href="#">Кабинет</a></li>
+              <li><a class="footer__list-item" href="#">Балкон/сад</a></li>
+            </ul>
+          </div>
+          <div class="footer__customer">
+            <div class="footer__customer-title footer-title">Покупателям</div>
+            <ul class="footer__list">
+              <li><a class="footer__list-item" href="#">Как заказать</a></li>
+              <li><a class="footer__list-item" href="#">Отзывы</a></li>
+              <li><a class="footer__list-item" href="#">Частые вопросы</a></li>
+              <li><a class="footer__list-item" href="#">Личный кабинет</a></li>
+            </ul>
+          </div>
+          <div class="footer__partners">
+            <div class="footer__partners-title footer-title">Партнёрам</div>
+            <ul class="footer__list">
+              <li><a class="footer__list-item" href="#">О нас</a></li>
+              <li><a class="footer__list-item" href="#">Партнерство</a></li>
+            </ul>
+          </div>
+          <div class="footer__info">
+            <div class="footer__info-title footer-title">Правовая инф.</div>
+            <ul class="footer__list">
+              <li><a class="footer__list-item" href="#">Документы</a></li>
+              <li><a class="footer__list-item" href="#">Публичная оферта</a></li>
+              <li><a class="footer__list-item" href="#">Политика<br> конфиденциальности</a></li>
+            </ul>
+          </div>
+          <div class="footer__subscribe">
+            <div class="footer__subscribe-title footer-title">Подписка на новинки</div>
+            <form class="footer__form" action="#" method="#">
+              <input class="footer__form-email" type="email" name="email" placeholder="Ваш E-mail">
+              <input class="footer__form-btn btn" type="submit" value="Подписаться" data-hystmodal="#subscribe">
+            </form>
+            <div class="footer__copy-mobile">© Dostavka.tk Все права защищены. 2019</div>
+          </div>
+        </div>
+        <div class="hystmodal" id="subscribe" aria-hidden="true">
+          <div class="hystmodal__wrap"> 
+            <div class="hystmodal__window subscribe-window" role="dialog" aria-modal="true">
+              <div class="modal" role="dialog" aria-modal="true">
+                <button class="modal-close modal-close-subs" data-hystclose></button>
+                <div class="modal-header">Подписка <br> на новости</div>
+                <div class="modal-title">Выберите, пожалуйста,<br> какая рассылка вам была бы интересна?</div>
+                <form action="#" method="#"> 
+                  <div class="checkbox-group">
+                    <input class="checkbox-group-input" type="checkbox" id="check1" name="top10">
+                    <label class="checkbox-group-label" for="check1">Топ 10 товаров недели</label>
+                  </div>
+                  <div class="checkbox-descr">Еженедельная подборка самых продаваемых товаров IKEA</div>
+                  <div class="checkbox-group">
+                    <input class="checkbox-group-input" type="checkbox" id="check2" name="news">
+                    <label class="checkbox-group-label" for="check2">Новинки IKEA</label>
+                  </div>
+                  <div class="checkbox-descr">Еженедельная подборка новинок</div>
+                  <div class="modal-after modal-title">После подписки Вам будет выслано письмо с подтверждением</div>
+                  <input class="modal-email" type="email" name="modalEmail" placeholder="Ваш e-mail">
+                  <div class="modal-answer"></div>
+                  <div class="modal-btn-group">
+                    <input class="modal-btn" type="submit" value="Подписаться">
+                    <div class="modal-agree">Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> и <a href="#">правилами обработки персональных данных</a>  </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/swiper-bundle.js"></script>
+    <script src="./js/hystmodal.min.js"></script>
+    <script src="./js/main.min.js"></script>
+  </body>
+</html>
